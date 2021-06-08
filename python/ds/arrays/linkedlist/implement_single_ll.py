@@ -1,10 +1,11 @@
+from interface_ll import LinkedList
 class SingleLLNode:
     def __init__(self,value,next=None):
         self.value = value
         self.next = next
 
 class SingleLLWithoutTail(LinkedList):
-    def __init__():
+    def __init__(self):
         self.head = None
         self.size = 0 
     def size(self):
@@ -28,9 +29,9 @@ class SingleLLWithoutTail(LinkedList):
         self.head = node
         self.size+=1
 
-    def pop_front(self,value):
+    def pop_front(self):
         if(self.empty()):
-            print("not data exist")
+            print("no data exist")
         else:
             value = self.head.value
             self.head = self.head.next
@@ -48,9 +49,9 @@ class SingleLLWithoutTail(LinkedList):
             tmp.next = node
         self.size+=1
 
-    def pop_back(self,value):
+    def pop_back(self):
         if(self.empty()):
-            print("not data exist")
+            print("no data exist")
         else:
             if self.size ==1:
                 value = self.head.value
@@ -66,12 +67,12 @@ class SingleLLWithoutTail(LinkedList):
 
     def front(self):
         if (self.empty()):
-            print("not data exist")
+            print("no data exist")
         else:
             return self.head.value
     def back(self):
         if (self.empty()):
-            print("not data exist")
+            print("no data exist")
         else:
             tmp=self.head
             while(tmp.next is not None):
@@ -87,3 +88,34 @@ class SingleLLWithoutTail(LinkedList):
         raise Exception('not implemented')
     def remove_value(self,value):
         raise Exception('not implemented')
+    def print(self):
+        a=[]
+        tmp=self.head
+        while(tmp is not None):
+            a.append(tmp.value)
+            tmp = tmp.next
+        print(a)
+
+obj = SingleLLWithoutTail()
+print(obj.size)
+print(obj.front())
+obj.pop_front()
+obj.pop_back()
+obj.push_front(1)
+obj.push_front(2)
+obj.push_back(3)
+obj.push_back(4)
+obj.push_front(5)
+print(obj.size)
+print(obj.front())
+obj.print()
+obj.pop_front()
+obj.print()
+obj.pop_back()
+obj.print()
+obj.push_front(5)
+obj.print()
+obj.push_back(4)
+obj.print()
+print(obj.front())
+print(obj.back())

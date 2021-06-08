@@ -7,11 +7,11 @@ class LinkedList:
         raise Exception('not implemented')
     def push_front(value):
         raise Exception('not implemented')
-    def pop_front(value):
+    def pop_front():
         raise Exception('not implemented')
     def push_back(value):
         raise Exception('not implemented')
-    def pop_back(value):
+    def pop_back():
         raise Exception('not implemented')
     def front():
         raise Exception('not implemented')
