@@ -11,11 +11,13 @@ class SingleLLWithoutTail(LinkedList):
     def size(self):
         return self.size
 
+    def check_index(self,index):
+        if index >= self.size:
+            raise Exception("index is greater than size")
     def empty(self):
         return self.size ==0
     def value_at(self,index):
-        if index >= size:
-            raise Exception("index is greater than size")
+        self.check_index(index)
         tmp = self.head
         tmp_index = 0
         while index !=tmp_index:
@@ -79,15 +81,59 @@ class SingleLLWithoutTail(LinkedList):
                 tmp = tmp.next
             return tmp.value
     def insert(self,index,value):
-        raise Exception('not implemented')
+        #  insert value at index, so current item at that index is pointed to by new item at index
+        self.check_index(index)
+        if index ==0:
+            self.push_front(value)
+            return
+        node = SingleLLNode(value)
+        tmp = self.head
+        tmp_index = 0
+        while index-1 !=tmp_index:
+            tmp= tmp.next
+            tmp_index+=1 
+        node.next= tmp.next      
+        tmp.next = node
+        self.size+=1
+
     def erase(self,index):
-        raise Exception('not implemented')
-    def value_n_from_end(self,n):
-        raise Exception('not implemented')
-    def reverse(self):
-        raise Exception('not implemented')
+        # removes node at given index
+        self.check_index(index)
+        if index ==0:
+            self.pop_front()
+            return
+        tmp = self.head
+        tmp_index = 0
+        while index-1 !=tmp_index:
+            tmp= tmp.next
+            tmp_index+=1
+        tmp.next = tmp.next.next
+        self.size-=1
+
+    # def value_n_from_end(self,n):
+    #     # returns the value of the node at nth position from the end of the list
+        
+    # def reverse(self):
+    #     tmp = self.head
+    #     prev = None
+    #     while tmp.next != None:
+    #         a = 
+    #         tmp.next = prev
+    #         tmp.next.next = tmp
+    #     self.head = tmp
+
     def remove_value(self,value):
-        raise Exception('not implemented')
+        if value == self.head.value:
+            self.pop_front()
+            return
+        tmp = self.head
+        while(tmp.next != None and tmp.next.value !=value):
+            tmp = tmp.next
+        if(tmp.next==None):
+            return f"{value} value does not exist"
+        else:
+            tmp.next = tmp.next.next
+
     def print(self):
         a=[]
         tmp=self.head
@@ -119,3 +165,19 @@ obj.push_back(4)
 obj.print()
 print(obj.front())
 print(obj.back())
+obj.print()
+obj.insert(0, 10)
+obj.insert(5, 12)
+obj.print()
+obj.erase(0)
+obj.erase(4)
+obj.print()
+obj.remove_value(5)
+obj.print()
+obj.remove_value(1)
+obj.print()
+obj.remove_value(4)
+obj.print()
+obj.push_front(5)
+obj.push_front(1)
+obj.print()
