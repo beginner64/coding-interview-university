@@ -52,6 +52,7 @@ class SingleLLWithoutTail(LinkedList):
         self.size+=1
 
     def pop_back(self):
+        print(self.size)
         if(self.empty()):
             print("no data exist")
         else:
@@ -110,17 +111,29 @@ class SingleLLWithoutTail(LinkedList):
         tmp.next = tmp.next.next
         self.size-=1
 
-    # def value_n_from_end(self,n):
-    #     # returns the value of the node at nth position from the end of the list
+    def value_n_from_end(self,n):
+        ref = self.head
+        main = self.head
+        while n>0:
+            if main is None:
+                print("node index is out of range")
+                return
+            main =main.next
+            n-=1
+        while main!= None:
+            main = main.next
+            ref=ref.next
+        return ref.value
         
-    # def reverse(self):
-    #     tmp = self.head
-    #     prev = None
-    #     while tmp.next != None:
-    #         a = 
-    #         tmp.next = prev
-    #         tmp.next.next = tmp
-    #     self.head = tmp
+    def reverse(self):
+        cur = self.head
+        prev = None
+        while cur != None:
+            stor = cur.next
+            cur.next = prev
+            prev = cur
+            cur = stor
+        self.head = prev
 
     def remove_value(self,value):
         if value == self.head.value:
@@ -133,6 +146,7 @@ class SingleLLWithoutTail(LinkedList):
             return f"{value} value does not exist"
         else:
             tmp.next = tmp.next.next
+        self.size-=1
 
     def print(self):
         a=[]
@@ -143,41 +157,61 @@ class SingleLLWithoutTail(LinkedList):
         print(a)
 
 obj = SingleLLWithoutTail()
-print(obj.size)
-print(obj.front())
-obj.pop_front()
-obj.pop_back()
-obj.push_front(1)
-obj.push_front(2)
-obj.push_back(3)
-obj.push_back(4)
-obj.push_front(5)
-print(obj.size)
-print(obj.front())
+# print(obj.size)
+# print(obj.front())
+# obj.pop_front()
+# obj.pop_back()
+# obj.push_front(1)
+# obj.push_front(2)
+# obj.push_back(3)
+# obj.push_back(4)
+# obj.push_front(5)
+# print(obj.size)
+# print(obj.front())
+# obj.print()
+# obj.pop_front()
+# obj.print()
+# obj.pop_back()
+# obj.print()
+# obj.push_front(5)
+# obj.print()
+# obj.push_back(4)
+# obj.print()
+# print(obj.front())
+# print(obj.back())
+# obj.print()
+# obj.insert(0, 10)
+# obj.insert(5, 12)
+# obj.print()
+# obj.erase(0)
+# obj.erase(4)
+# obj.print()
+# obj.remove_value(5)
+# obj.print()
+# obj.remove_value(1)
+# obj.print()
+# obj.remove_value(4)
+# obj.print()
+# obj.push_front(5)
+# obj.push_front(1)
+# obj.print()
+# obj.reverse()
+# obj.print()
+# obj.pop_back()
+# obj.pop_back()
+# obj.print()
+# obj.reverse()
+# obj.print()
+# obj.pop_back()
+# obj.reverse()
+# obj.print()
+# obj.reverse()
+# obj.print()
+# obj.pop_back()
 obj.print()
-obj.pop_front()
+obj.push_front(20)
+obj.push_front(4)
+obj.push_front(15)
+obj.push_front(35)
 obj.print()
-obj.pop_back()
-obj.print()
-obj.push_front(5)
-obj.print()
-obj.push_back(4)
-obj.print()
-print(obj.front())
-print(obj.back())
-obj.print()
-obj.insert(0, 10)
-obj.insert(5, 12)
-obj.print()
-obj.erase(0)
-obj.erase(4)
-obj.print()
-obj.remove_value(5)
-obj.print()
-obj.remove_value(1)
-obj.print()
-obj.remove_value(4)
-obj.print()
-obj.push_front(5)
-obj.push_front(1)
-obj.print()
+print(obj.value_n_from_end(2))
