@@ -27,3 +27,8 @@ class LinkedList:
         raise Exception('not implemented')
     def remove_value(value):
         raise Exception('not implemented')
+
+class SingleLLNode:
+    def __init__(self,value,next=None):
+        self.value = value
+        self.next = next

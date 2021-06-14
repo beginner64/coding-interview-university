@@ -1,30 +1,18 @@
-from interface_ll import LinkedList,SingleLLNode
+from implement_single_ll_without_tail import SingleLLWithoutTail
+from interface_ll import SingleLLNode
 
-class SingleLLWithoutTail(LinkedList):
+class SingleLLWithTail(SingleLLWithoutTail):
     def __init__(self):
         self.head = None
         self.size = 0 
-    def size(self):
-        return self.size
-
-    def check_index(self,index,offset=0):
-        if   offset >= self.size + index:
-            raise Exception("index is greater than size")
-    def empty(self):
-        return self.size ==0
-    def value_at(self,index):
-        self.check_index(index)
-        tmp = self.head
-        tmp_index = 0
-        while index !=tmp_index:
-            tmp= tmp.next
-            tmp_index+=1 
-        return tmp.value
+        self.tail = None
 
     def push_front(self,value):
         node = SingleLLNode(value)
         node.next = self.head
         self.head = node
+        if(self.empty()):
+            self.tail = node
         self.size+=1
 
     def pop_front(self):
@@ -34,17 +22,16 @@ class SingleLLWithoutTail(LinkedList):
             value = self.head.value
             self.head = self.head.next
             self.size-=1
+            if(self.empty()):
+                self.tail = None
             return value
 
     def push_back(self,value):
         node = SingleLLNode(value)
+        self.tail.next = node
+        self.tail = node
         if(self.empty()):
-            self.head =  node
-        else:
-            tmp=self.head
-            while(tmp.next is not None):
-                tmp = tmp.next
-            tmp.next = node
+            self.head = node
         self.size+=1
 
     def pop_back(self):
@@ -54,34 +41,31 @@ class SingleLLWithoutTail(LinkedList):
             if self.size ==1:
                 value = self.head.value
                 self.head = None
+                self.tail = None
             else:
                 tmp=self.head
                 while(tmp.next.next is not None):
                     tmp = tmp.next
                 value = tmp.next.value
                 tmp.next = None
+                self.tail = tmp
             self.size-=1
             return value
 
-    def front(self):
-        if (self.empty()):
-            print("no data exist")
-        else:
-            return self.head.value
     def back(self):
         if (self.empty()):
             print("no data exist")
         else:
-            tmp=self.head
-            while(tmp.next is not None):
-                tmp = tmp.next
-            return tmp.value
+            return self.tail.value
 
     def insert(self,index,value):
         #  insert value at index, so current item at that index is pointed to by new item at index
         self.check_index(index,offset=1)
         if index ==0:
             self.push_front(value)
+            return
+        if index == self.size:
+            self.push_back(value)
             return
         node = SingleLLNode(value)
         tmp = self.head
@@ -99,6 +83,9 @@ class SingleLLWithoutTail(LinkedList):
         if index ==0:
             self.pop_front()
             return
+        if index == self.size:
+            self.pop_back()
+            return
         tmp = self.head
         tmp_index = 0
         while index-1 !=tmp_index:
@@ -106,22 +93,9 @@ class SingleLLWithoutTail(LinkedList):
             tmp_index+=1
         tmp.next = tmp.next.next
         self.size-=1
-
-    def value_n_from_end(self,n):
-        ref = self.head
-        main = self.head
-        while n>0:
-            if main is None:
-                print("node index is out of range")
-                return
-            main =main.next
-            n-=1
-        while main!= None:
-            main = main.next
-            ref=ref.next
-        return ref.value
         
     def reverse(self):
+        self.tail = self.head
         cur = self.head
         prev = None
         while cur != None:
@@ -135,6 +109,9 @@ class SingleLLWithoutTail(LinkedList):
         if value == self.head.value:
             self.pop_front()
             return
+        if value == self.tail.value:
+            self.pop_back()
+            return
         tmp = self.head
         while(tmp.next != None and tmp.next.value !=value):
             tmp = tmp.next
@@ -144,29 +121,24 @@ class SingleLLWithoutTail(LinkedList):
             tmp.next = tmp.next.next
         self.size-=1
 
-    def print(self):
-        a=[]
-        tmp=self.head
-        while(tmp is not None):
-            a.append(tmp.value)
-            tmp = tmp.next
-        print(a)
-
-
 if __name__ == "__main__":
-    obj = SingleLLWithoutTail()
+    obj = SingleLLWithTail()
     print(obj.size)
     print(obj.front())
+    print(obj.back())    
     obj.pop_front()
     obj.pop_back()
     obj.push_front(1)
     obj.push_front(2)
+    print(obj.back())
+    obj.print()
     obj.push_back(3)
     obj.push_back(4)
+    obj.print()
     obj.push_front(5)
+    obj.print()
     print(obj.size)
     print(obj.front())
-    obj.print()
     obj.pop_front()
     obj.print()
     obj.pop_back()
@@ -174,13 +146,16 @@ if __name__ == "__main__":
     obj.push_front(5)
     obj.print()
     obj.push_back(4)
-    obj.print()
     print(obj.front())
     print(obj.back())
     obj.print()
-    obj.insert(0, 10)
+    obj.reverse()
     obj.print()
-    obj.insert(6, 13)
+    print(obj.front())
+    print(obj.back())
+    obj.insert(0, 10)
+    obj.insert(5, 12)
+    obj.insert(7, 11)
     obj.print()
     obj.erase(0)
     obj.erase(4)
