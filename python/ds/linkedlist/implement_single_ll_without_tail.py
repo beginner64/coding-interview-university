@@ -1,4 +1,4 @@
-from interface_ll import LinkedList,SingleLLNode
+from  python.ds.linkedlist.interface_ll import LinkedList,SingleLLNode
 
 class SingleLLWithoutTail(LinkedList):
     def __init__(self):

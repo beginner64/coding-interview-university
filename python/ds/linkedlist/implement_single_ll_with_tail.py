@@ -1,5 +1,5 @@
-from implement_single_ll_without_tail import SingleLLWithoutTail
-from interface_ll import SingleLLNode
+from python.ds.linkedlist.implement_single_ll_without_tail import SingleLLWithoutTail
+from python.ds.linkedlist.interface_ll import SingleLLNode
 
 class SingleLLWithTail(SingleLLWithoutTail):
     def __init__(self):
@@ -28,10 +28,11 @@ class SingleLLWithTail(SingleLLWithoutTail):
 
     def push_back(self,value):
         node = SingleLLNode(value)
-        self.tail.next = node
-        self.tail = node
         if(self.empty()):
             self.head = node
+        else:
+            self.tail.next = node
+        self.tail = node
         self.size+=1
 
     def pop_back(self):
