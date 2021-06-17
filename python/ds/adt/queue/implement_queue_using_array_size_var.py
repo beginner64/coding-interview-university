@@ -13,9 +13,12 @@ class QueueUsingArray(Queue):
             print("queue is full")
             return
         if self.empty():
-            self.head = (self.head+1)  % self.length
-        self.tail = (self.tail+ 1) % self.length
-        self.arr[self.tail] = value
+            self.head = 0
+            self.tail =0
+            self.arr[self.tail] = value
+        else:
+            self.tail = (self.tail+ 1) % self.length
+            self.arr[self.tail] = value
         self.size+=1
         
     
@@ -24,7 +27,11 @@ class QueueUsingArray(Queue):
             print("queue is empty")
             return        
         data = self.arr[self.head]
-        self.head = (self.head+1)  % self.length
+        if self.head == self.tail :
+            self.head =-1
+            self.tail = -1
+        else:
+            self.head = (self.head+1)  % self.length
         self.size-=1
         return data
     
@@ -59,15 +66,13 @@ if __name__ == "__main__":
     queue.print()
     queue.enqueue(1)
     queue.print()
-    # queue.enqueue(2)
-    # queue.enqueue(3)
-    # queue.enqueue(4)
-    # queue.print()
-    # queue.dequeue()
-    # queue.dequeue()
-    # queue.enqueue(3)
-    # queue.enqueue(4)
-    # queue.enqueue(3)
-    # queue.enqueue(4)
-    # queue.print()
+    queue.enqueue(2)
+    queue.enqueue(3)
+    queue.enqueue(4)
+    queue.print()
+    queue.dequeue()
+    queue.dequeue()
+    queue.enqueue(5)
+    queue.enqueue(6)
+    queue.print()
 
