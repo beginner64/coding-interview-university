@@ -42,14 +42,19 @@ class QueueUsingArray(Queue):
         if self.empty():
             print(a)
             return
-        if self.head > self.tail:
-            for i in range(self.head,self.length):
-                a.append(self.arr[i])
-            for i in range(self.tail+1):
-                a.append(self.arr[i])
-        else:
-            for i in range(self.head,self.tail+1):
-                a.append(self.arr[i])
+        i = self.head
+        while(i!=self.tail):
+            a.append(self.arr[i])
+            i= (i+1) % self.length
+        a.append(self.arr[i])
+        # if self.head > self.tail:
+        #     for i in range(self.head,self.length):
+        #         a.append(self.arr[i])
+        #     for i in range(self.tail+1):
+        #         a.append(self.arr[i])
+        # else:
+        #     for i in range(self.head,self.tail+1):
+        #         a.append(self.arr[i])
         print(a)
 
 if __name__ == "__main__":
