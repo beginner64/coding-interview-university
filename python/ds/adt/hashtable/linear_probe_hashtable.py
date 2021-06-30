@@ -78,3 +78,5 @@ if __name__ == "__main__":
     obj.print()
     obj.remove(2)
     obj.print()
+
+    # https://coderbook.com/@marcus/how-to-create-a-hash-table-from-scratch-in-python/
