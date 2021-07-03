@@ -781,7 +781,7 @@ Write code on a whiteboard or paper, not a computer. Test with some sample input
 - [✓] [Selection Sort (video)](https://www.youtube.com/watch?v=6nDMgr0-Yyo&index=8&list=PL89B61F78B552C1AB)
 
 - [ ] Implement:
-    - [ ] bubble sort  
+    - [✓] bubble sort  
     - [ ] insertion sort 
     - [ ] selection sort 
     - [ ] Mergesort: O(n log n) average and worst case [Using output array (Python)](https://github.com/jwasham/practice-python/blob/master/merge_sort/merge_sort.py)
