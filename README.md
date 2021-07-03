@@ -660,6 +660,9 @@ Write code on a whiteboard or paper, not a computer. Test with some sample input
 ## Trees
 
 - ### Trees - Notes & Background
+    - [✓]  [cs 61b 1] (https://archive.org/details/ucberkeley_webcast_evwGnROlB58)
+    - []  [cs 61b 2] (https://archive.org/details/ucberkeley_webcast_V_3BM0ykITM)    
+    - []  [cs 61b 3] (https://archive.org/details/ucberkeley_webcast_zqrqYXkth6Q)  
     - [ ] [Series: Trees (video)](https://www.coursera.org/lecture/data-structures/trees-95qda)
     - basic tree construction
     - traversal
