@@ -782,7 +782,7 @@ Write code on a whiteboard or paper, not a computer. Test with some sample input
 
 - [ ] Implement:
     - [✓] bubble sort  
-    - [ ] insertion sort 
+    - [✓] insertion sort 
     - [ ] selection sort 
     - [ ] Mergesort: O(n log n) average and worst case [Using output array (Python)](https://github.com/jwasham/practice-python/blob/master/merge_sort/merge_sort.py)
     - [ ] Quicksort O(n log n) average case [Implementation (Python)](https://github.com/jwasham/practice-python/blob/master/quick_sort/quick_sort.py)
