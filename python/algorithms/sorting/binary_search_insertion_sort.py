@@ -19,17 +19,16 @@ def binary_search_insert_sort(arr):
 
 
 from random import randrange
-for i in range(1000):
-    arr =  [randrange(1000) for i in range(1001)] 
+# for i in range(100):
+arr =  [randrange(100) for i in range(1000)] 
     # arr = [0, 6, 5, 2, 4, 5, 2, 3, 6, 6]
     # ind = binary_search(arr,5,0,1)
     # print(ind)
     # print("programming-language-resources.md",arr)
-    sorted_arr = sorted(arr)
-    binary_search_insert_sort(arr)
-    # print("post",arr)
-    if sorted_arr != arr:
-        print("failed",arr)
-        break 
-
+sorted_arr = sorted(arr)
+# arr = sorted_arr[::-1]
+# print(arr)
+binary_search_insert_sort(arr)
+# print(arr)
+print(sorted_arr == arr)
 # print(arr)
