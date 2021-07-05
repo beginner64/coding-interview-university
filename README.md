@@ -661,9 +661,8 @@ Write code on a whiteboard or paper, not a computer. Test with some sample input
 
 - ### Trees - Notes & Background
     - [✓] [cs 61b 1](https://archive.org/details/ucberkeley_webcast_evwGnROlB58)
-    - [✓]  [cs 61b 2](https://archive.org/details/ucberkeley_webcast_V_3BM0ykITM)    
-    - []  [cs 61b 3](https://archive.org/details/ucberkeley_webcast_zqrqYXkth6Q)  
-    - [ ] [Series: Trees (video)](https://www.coursera.org/lecture/data-structures/trees-95qda)
+    - [✓]  [cs 61b 2](https://archive.org/details/ucberkeley_webcast_V_3BM0ykITM) 
+    - [✓] [Series: Trees (video)](https://www.coursera.org/lecture/data-structures/trees-95qda)
     - basic tree construction
     - traversal
     - manipulation algorithms
@@ -1624,6 +1623,7 @@ You're never really done.
     - [CS 61B Lecture 39: Augmenting Data Structures](https://archive.org/details/ucberkeley_webcast_zksIj9O8_jc)
 
 - ### Balanced search trees
+    - []  [cs 61b 3](https://archive.org/details/ucberkeley_webcast_zqrqYXkth6Q)  
     - Know at least one type of balanced binary tree (and know how it's implemented):
     - "Among balanced search trees, AVL and 2/3 trees are now passé, and red-black trees seem to be more popular.
         A particularly interesting self-organizing data structure is the splay tree, which uses rotations
