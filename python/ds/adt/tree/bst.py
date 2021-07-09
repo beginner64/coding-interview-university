@@ -3,24 +3,26 @@ class Node:
         self.data = data
         self.left = left
         self.right = right
-        self.s=0
 
 class BST:
     def __init__(self):
         self.root = None
+        self.s=0
 
     def insert(self,data):
+        if not self.root:
+            self.root = Node(data)
+            return
         node = self.search(data)
         # no duplicates
-        if node:
-            return
+        new_node = Node(data)
+        if data ==node.data:
+            return 
+        elif data <node.data:
+            node.left = new_node
         else:
-            new_node = Node(data)
-            if data <=node.data:
-                node.left = new_node
-            else:
-                node.right = new_node
-            self.s+=1
+            node.right = new_node
+        self.s+=1
 
 
     def search(self,data):
@@ -55,4 +57,22 @@ class BST:
             temp = temp.right
         return temp
 
-    # def in_order_print():
+    def print(self):
+        self.traverse_inorder(self.root)
+
+    def traverse_inorder(self,root):
+        if root == None:
+            return 
+        self.traverse_inorder(root.left)
+        print(root.data, end = ' ')
+        self.traverse_inorder(root.right)
+
+from random import randrange
+
+tree = BST()
+arr = [ randrange(10) for i in range(100)]
+dt = list(map(lambda z: str(z),sorted(list(set(arr)))))
+print(" ".join(dt))
+[tree.insert(i) for i in arr]
+tree.print()
+# print(tree.root.data)
