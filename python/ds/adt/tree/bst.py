@@ -3,6 +3,7 @@ class Node:
         self.data = data
         self.left = left
         self.right = right
+        self.s=0
 
 class BST:
     def __init__(self):
@@ -19,6 +20,7 @@ class BST:
                 node.left = new_node
             else:
                 node.right = new_node
+            self.s+=1
 
 
     def search(self,data):
@@ -34,3 +36,23 @@ class BST:
             return temp
         else:
             return parent
+    
+    def is_in_tree(self,data):
+        return self.search(data) != None
+
+    def get_node_count():
+        return self.s
+
+    def get_min():
+        temp = self.root
+        while temp!=None and temp.left:
+            temp = temp.left
+        return temp
+
+    def get_max():
+        temp = self.root
+        while temp!=None and temp.right:
+            temp = temp.right
+        return temp
+
+    # def in_order_print():
