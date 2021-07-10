@@ -67,12 +67,24 @@ class BST:
         print(root.data, end = ' ')
         self.traverse_inorder(root.right)
 
+    def get_height(self,node):
+        if node == None:
+            # single node's height is 1 else do -1
+            return 0
+        else:
+            return max(self.get_height(node.left),self.get_height(node.right))+1
+
+    def get_depth(self,node):
+        ...
+
 from random import randrange
 
 tree = BST()
 arr = [ randrange(101) for i in range(10)]
+arr = [50,30,20,40,70,60,80]
 dt = list(map(lambda z: str(z),sorted(list(set(arr)))))
 print(" ".join(dt))
 [tree.insert(i) for i in arr]
 tree.print()
+print(tree.get_height(tree.root))
 # print(tree.root.data)
