@@ -140,7 +140,6 @@ class BST:
                 self.root=child
         else:
             successor = self.find_successor(node)
-            print(successor.data)
             if node != self.root:
                 if is_left:
                     parent.left = successor
