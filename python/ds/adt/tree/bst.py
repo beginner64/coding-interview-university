@@ -70,7 +70,7 @@ class BST:
 from random import randrange
 
 tree = BST()
-arr = [ randrange(10) for i in range(100)]
+arr = [ randrange(101) for i in range(10)]
 dt = list(map(lambda z: str(z),sorted(list(set(arr)))))
 print(" ".join(dt))
 [tree.insert(i) for i in arr]
