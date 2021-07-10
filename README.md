@@ -654,8 +654,8 @@ Write code on a whiteboard or paper, not a computer. Test with some sample input
         - [How To Count The Number Of Set Bits In a 32 Bit Integer](http://stackoverflow.com/questions/109023/how-to-count-the-number-of-set-bits-in-a-32-bit-integer)
     - [✓] Swap values:
         - [Swap](https://bits.stephan-brumme.com/swap.html)
-    - [ ] Absolute value:
-        - [Absolute Integer](https://bits.stephan-brumme.com/absInteger.html)
+    - [✓] Absolute value:
+        - [Absolute Integer](https://www.youtube.com/watch?v=zJGts7hOX9s)
     - [] [bit manipulation](https://www.youtube.com/playlist?list=PL2q4fbVm1Ik7ip1VkWwe5U_CEb93vw6Iu)
     - [] [bit manipulation](https://www.youtube.com/watch?v=3txlyWW8cKk&list=PLfQN-EvRGF39Vz4UO18BtA1ocnUhGkvk5)
     - [] [Bit hacks](https://www.youtube.com/watch?v=ZusiKXcz_ac)
