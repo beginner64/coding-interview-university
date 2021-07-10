@@ -68,14 +68,38 @@ class BST:
         self.traverse_inorder(root.right)
 
     def get_height(self,node):
+        #  max depth = height
         if node == None:
-            # single node's height is 1 else do -1
-            return 0
+            # single node's height is 1 then do 0
+            return -1
         else:
             return max(self.get_height(node.left),self.get_height(node.right))+1
 
-    def get_depth(self,node):
-        ...
+    def get_height_of_node(self,data):
+        node = self.search(data)
+        return self.get_height(node)
+
+    def find_depth(self,node, x):
+    
+        # Base case
+        if (node == None):
+            return -1
+    
+        # Initialize distance as -1
+        dist = -1
+    
+        # Check if x is current node=
+        if (node.data == x):
+            return dist + 1
+    
+        dist = self.find_depth(node.left, x)
+        if dist >= 0:
+            return dist + 1
+        dist = self.find_depth(node.right, x)
+        if dist >= 0:
+            return dist + 1
+        return dist
+
 
 from random import randrange
 
@@ -87,4 +111,8 @@ print(" ".join(dt))
 [tree.insert(i) for i in arr]
 tree.print()
 print(tree.get_height(tree.root))
+print(tree.root.data)
+print("Depth: ",tree.find_depth(tree.root, 30))
+print("Height: ",tree.get_height_of_node(30))
 # print(tree.root.data)
+# 
