@@ -707,7 +707,7 @@ Write code on a whiteboard or paper, not a computer. Test with some sample input
         - [✓] get_min   // returns the minimum value stored in the tree
         - [✓] get_max   // returns the maximum value stored in the tree
         - [ ] is_binary_search_tree
-        - [ ] delete_value
+        - [✓] delete_value
         - [ ] get_successor // returns next-highest value in tree after given value, -1 if none
 
 - ### Heap / Priority Queue / Binary Heap
