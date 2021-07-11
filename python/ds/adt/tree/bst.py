@@ -183,6 +183,7 @@ class BST:
 
 
     def get_inorder_successor(self,data):
+        # O(h)
         node = self.search(data)
         if node.right:
             node = node.right
