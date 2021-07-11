@@ -656,9 +656,8 @@ Write code on a whiteboard or paper, not a computer. Test with some sample input
         - [Swap](https://bits.stephan-brumme.com/swap.html)
     - [✓] Absolute value:
         - [Absolute Integer](https://www.youtube.com/watch?v=zJGts7hOX9s)
-    - [] [bit manipulation](https://www.youtube.com/playlist?list=PL2q4fbVm1Ik7ip1VkWwe5U_CEb93vw6Iu)
+    - [✓] [bit manipulation lectures](https://www.youtube.com/playlist?list=PL2q4fbVm1Ik7ip1VkWwe5U_CEb93vw6Iu)
     - [] [bit manipulation](https://www.youtube.com/watch?v=3txlyWW8cKk&list=PLfQN-EvRGF39Vz4UO18BtA1ocnUhGkvk5)
-    - [] [Bit hacks](https://www.youtube.com/watch?v=ZusiKXcz_ac)
 
 ## Trees
 
