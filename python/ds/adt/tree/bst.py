@@ -1,3 +1,4 @@
+import sys
 class Node:
     def __init__(self,data,left=None,right=None):
         self.data = data
@@ -171,6 +172,16 @@ class BST:
             print("it is root")
         root = None
 
+    def is_binary_search_tree(self,node,l=None,r=None):
+        if node == None:
+            return True
+        if l and node.data < l.data:
+            return False
+        if r and node.data > r.data:
+            return False 
+        return self.is_binary_search_tree(node.left,l,node) and self.is_binary_search_tree(node.right,node,r)
+
+
 from random import randrange
 
 tree = BST()
@@ -192,9 +203,17 @@ tree.delete_node(70)
 tree.print()
 print()
 print(tree.root.data)
+node  = tree.root
+# print(node.data,node.left.data,node.right.data)
+# for i in range(0,1):
+#     print("ankit")
+#     print(node.data)
+#     node=node.left
+# print(node.data,node.left.data,node.right.data)
+# node = node.right
+print("tree is bst ",tree.is_binary_search_tree(tree.root))
+# print(tree.root.data)
 print("deleting tree")
 tree.delete_tree(tree.root)
 print("printing tree")
 tree.print()
-# print(tree.root.data)
-# 
