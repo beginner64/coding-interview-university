@@ -182,6 +182,26 @@ class BST:
         return self.is_binary_search_tree(node.left,l,node) and self.is_binary_search_tree(node.right,node,r)
 
 
+    def get_inorder_successor(self,data):
+        node = self.search(data)
+        if node.right:
+            node = node.right
+            while node != None and node.left != None:
+                node = node.left
+            return node.data
+        else:
+            temp =self.root
+            succ = None
+            while temp:
+                if temp.data < data:
+                    temp = temp.right
+                elif temp.data > data:
+                    succ = temp
+                    temp =temp.left
+                else:
+                    break
+            return succ.data
+
 from random import randrange
 
 tree = BST()
@@ -194,7 +214,7 @@ tree.print()
 print(tree.get_height(tree.root))
 print(tree.root.data)
 print("Depth: ",tree.find_depth(tree.root, 90))
-print("Height: ",tree.get_height_of_node(30))
+print("Height: ",tree.get_height_of_node(20))
 tree.delete_node(50)
 tree.print()
 print()
@@ -212,6 +232,8 @@ node  = tree.root
 # print(node.data,node.left.data,node.right.data)
 # node = node.right
 print("tree is bst ",tree.is_binary_search_tree(tree.root))
+print("inOrder successor", tree.get_inorder_successor(73))
+
 # print(tree.root.data)
 print("deleting tree")
 tree.delete_tree(tree.root)
