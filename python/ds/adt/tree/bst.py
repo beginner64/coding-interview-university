@@ -139,7 +139,7 @@ class BST:
             else:
                 self.root=child
         else:
-            successor = self.find_successor(node)
+            successor = self.find_successor_for_delete(node)
             if node != self.root:
                 if is_left:
                     parent.left = successor
@@ -150,7 +150,7 @@ class BST:
             successor.left = node.left
             
             
-    def find_successor(self,node):
+    def find_successor_for_delete(self,node):
         s_p = node
         s = node.right 
         while s!= None and s.left!=None:
@@ -160,9 +160,16 @@ class BST:
             s_p.left =s.right
             s.right = node.right
         return s               
-
-    def delete_tree(self):
-        ...
+# python program to delete a tree
+    def delete_tree(self,root):
+        if root ==None:
+            return 
+        root.left =self.delete_tree(root.left)
+        root.right =self.delete_tree(root.right)
+        if root == self.root:
+            self.root=None
+            print("it is root")
+        root = None
 
 from random import randrange
 
@@ -185,5 +192,9 @@ tree.delete_node(70)
 tree.print()
 print()
 print(tree.root.data)
+print("deleting tree")
+tree.delete_tree(tree.root)
+print("printing tree")
+tree.print()
 # print(tree.root.data)
 # 
