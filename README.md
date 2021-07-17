@@ -873,9 +873,9 @@ Graphs can be used to represent many problems in computer science, so this secti
         - [✓] [Lecture 11 | Programming Abstractions (video)](https://www.youtube.com/watch?v=p-gpaIGRCQI&list=PLFE6E58F856038C69&index=11)
     - When it is appropriate to use it?
     - How is tail recursion better than not?
-        - [ ] [What Is Tail Recursion Why Is It So Bad?](https://www.quora.com/What-is-tail-recursion-Why-is-it-so-bad)
-        - [ ] [Tail Recursion (video)](https://www.youtube.com/watch?v=L1jjXGfxozc)
-
+        - [✓] [What Is Tail Recursion Why Is It So Bad?](https://www.quora.com/What-is-tail-recursion-Why-is-it-so-bad)
+        - [✓] [Tail Recursion (video)](https://www.youtube.com/watch?v=_JtPhF8MshA) 
+        - [✓] [Tail Recursion (video)](https://www.youtube.com/watch?v=lG6HxO7cDRw)
 - ### Dynamic Programming
     - You probably won't see any dynamic programming problems in your interview, but it's worth being able to recognize a problem as being a candidate for dynamic programming.
     - This subject can be pretty difficult, as each DP soluble problem must be defined as a recursion relation, and coming up with it can be tricky.
