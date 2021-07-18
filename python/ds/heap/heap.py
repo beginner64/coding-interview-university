@@ -74,7 +74,7 @@ class MaxHeap(object):
         i = len(arr)-1
         while i>=0:
             arr[0],arr[i] = arr[i],arr[0]
-            self.heapify(arr,self.s-1,(self.s-1) //2 )
+            self.heapify(arr,self.s-1,(self.s-2) //2 )
             i-=1
 
     def remove(self,i):
