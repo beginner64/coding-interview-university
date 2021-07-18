@@ -61,39 +61,52 @@ class MaxHeap(object):
             else:
                 break
 
-    def heapify(self,arr,s):
+    def heapify(self,arr,s,ind):
         self.heap=arr
         self.s=s
-        for index  in range((self.s-1)//2,-1,-1):
+        for index  in range(ind,-1,-1):
             self.shift_down(index)
         return self.heap
 
 
     def heap_sort(self,arr):
-        self.heapify(arr,len(arr))
+        self.heapify(arr,len(arr),(self.s-1) //2 )
         i = len(arr)-1
         while i>=0:
             arr[0],arr[i] = arr[i],arr[0]
-            self.heapify(arr,self.s-1)
+            self.heapify(arr,self.s-1,(self.s-1) //2 )
             i-=1
 
     def remove(self,i):
-        ...
+        # https://www.geeksforgeeks.org/insertion-and-deletion-in-heaps/
+        self.heap[i] = self.heap[self.s-1]
+        self.heapify(self.heap,self.s-1,i)
+
+    def print(self):
+        print(self.heap[0:self.s])
 
 if __name__ == "__main__":
     maxHeap = MaxHeap()
     arr =[5,3,17,10,84,19,6,22,9]
     for i in arr:
         maxHeap.insert(i)
-    print(maxHeap.heap)
+    maxHeap.print()
     data= maxHeap.heap[:]
     while maxHeap.heap:
         print(maxHeap.extract_max())
-    maxHeap.heapify(arr,len(arr))
-    print(maxHeap.heap)
+    maxHeap.heapify(arr,len(arr),(len(arr)-1) //2)
+    maxHeap.print()
     while maxHeap.heap:
         print(maxHeap.extract_max())
     arr = [91,91,82,73,64,55,46,37,28,28,19,10,10]
     print("heap sort")
     maxHeap.heap_sort(arr)
     print(arr)
+    arr =[5,3,17,10,84,19,6,22,9]
+    maxHeap.heap=[]
+    for i in arr:
+        maxHeap.insert(i)
+    maxHeap.print()
+    maxHeap.remove(0)
+    maxHeap.remove(2)
+    maxHeap.print()
