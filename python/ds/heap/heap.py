@@ -66,8 +66,6 @@ class MaxHeap(object):
         self.s=s
         for index  in range(ind,-1,-1):
             self.shift_down(index)
-        return self.heap
-
 
     def heap_sort(self,arr):
         self.heapify(arr,len(arr),(self.s-1) //2 )
