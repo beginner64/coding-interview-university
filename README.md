@@ -917,7 +917,7 @@ Graphs can be used to represent many problems in computer science, so this secti
         - [ ] visitor
         - [ ] factory, abstract factory
         - [ ] facade
-        - [ ] observer
+        - [✓] observer
         - [ ] proxy
         - [ ] delegate
         - [ ] command
