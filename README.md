@@ -913,7 +913,7 @@ Graphs can be used to represent many problems in computer science, so this secti
         - [ ] singleton
         - [ ] adapter
         - [ ] prototype
-        - [ ] decorator
+        - [✓] decorator
         - [ ] visitor
         - [ ] factory, abstract factory
         - [ ] facade
